@@ -56,6 +56,7 @@ public class StepTracker {
         int month = scanner.nextInt();
         if (month < 0 || month > 11) {
             System.out.println("Введенное значение некорректно. Номер месяца должен быть от 0 до 11 включительно");
+            return;
         }
         MonthData monthData = monthToData[month];
         int sumSteps = monthData.sumStepsFromMonth();

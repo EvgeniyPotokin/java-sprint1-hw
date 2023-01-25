@@ -4,8 +4,7 @@ class MonthData {
     void printDaysAndStepsFromMonth() {
         int printDay;
         for (int i = 0; i < 30; i++) {
-            printDay = i + 1;
-            System.out.println(printDay + " -й день: " + days[i]);
+            System.out.println((i + 1) + " -й день: " + days[i]);
             // Вывод элементов массива в необходимом формате
         }
     }
@@ -33,14 +32,16 @@ class MonthData {
         int countBest = 0;
         for (int i = 0; i < 30; i++) {
             if (days[i] >= goalByStepsPerDay) {
-                bestSession = bestSession + 1;
+                bestSession = bestSession + 1; {
+                    if (bestSession > countBest) {
+                        countBest = bestSession;
+                    }
+                }
             }
             else if (days[i] < goalByStepsPerDay) {
                 bestSession = 0;
             }
-            if (bestSession > countBest) {
-                countBest = bestSession;
-            }
+
                   }
         return countBest;
     }
